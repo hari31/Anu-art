@@ -3,13 +3,12 @@
 	<title>Anu art</title>
 </head>
 <html>
-<body style="background: url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-06_13-08-52.png)">
+<body onload="setInterval('anu()', 2000)" style="background: url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-06_13-08-52.png)">
     <p class="imageNames" style="font-size: 200px; color: #ff0099; text-align: center;">anu</p>
     <p class="imageNames" style="font-size: 200px; color: white; text-align: center;">aishu</p>
     <p class="imageNames" style="font-size: 200px; color: orange; text-align: center;">yashu</p>
     <script>
         var currentImage = 0;
-        anu();
         function anu() {
             var i;
             var x = document.getElementsByClassName("imageNames");
@@ -19,7 +18,6 @@
                 currentImage=0;
             x[currentImage].style.display = "block";
             ++currentImage;
-            setTimeout(anu, 2000);
         }
     </script>
 <body>
