@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<title>Anu art</title>
 </head>
-<html>
-<body onload="setInterval('anu()', 2000)" style="background: url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-06_13-08-52.png)">
+<body id="body" onload="setInterval('anu()', 2000)">
     <p class="imageNames" style="font-size: 200px; color: #ff0099; text-align: center;">anu</p>
     <p class="imageNames" style="font-size: 200px; color: white; text-align: center;">aishu</p>
     <p class="imageNames" style="font-size: 200px; color: orange; text-align: center;">yashu</p>
@@ -11,12 +11,24 @@
         var currentImage = 0;
         function anu() {
             var i;
+            var bg = new Array();
+            bg[0] = 'url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-08_11-00-06.png)';
+            bg[1] = 'url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-08_10-59-05.png)';
+            bg[2] = 'url(http://52.38.71.122/upfiles/Screenshot_from_2017-06-08_10-58-06.png)';
+
             var x = document.getElementsByClassName("imageNames");
+            var y = document.getElementById('body');
+
             for(i=0;i<x.length;i++)
                 x[i].style.display="none";
             if(currentImage == x.length)
                 currentImage=0;
             x[currentImage].style.display = "block";
+            y.style.backgroundImage = bg[currentImage];
+            y.style.backgroundRepeat = 'no-repeat';
+            y.style.backgroundPosition = 'center';
+            y.style.backgroundSize = 'cover';
+
             ++currentImage;
         }
     </script>
