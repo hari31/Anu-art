@@ -2,8 +2,26 @@
 <html>
 <head>
 	<title>Anu art</title>
+	<style type="text/css">
+		p {
+			animation-name: fade;
+			animation-duration: 3s;
+		}
+		@keyframes fade{
+			0%{
+				opacity: 0;
+			}
+			50%{
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+
+	</style>
 </head>
-<body id="body" onload="setInterval('anu()', 2000)">
+<body id="body" onload="setInterval('anu()', 3000)">
     <p class="imageNames" style="font-size: 200px; color: #ff0099; text-align: center;">anu</p>
     <p class="imageNames" style="font-size: 200px; color: white; text-align: center;">aishu</p>
     <p class="imageNames" style="font-size: 200px; color: orange; text-align: center;">yashu</p>
@@ -23,6 +41,7 @@
                 x[i].style.display="none";
             if(currentImage == x.length)
                 currentImage=0;
+
             x[currentImage].style.display = "block";
             y.style.backgroundImage = bg[currentImage];
             y.style.backgroundRepeat = 'no-repeat';
